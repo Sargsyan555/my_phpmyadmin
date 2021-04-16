@@ -166,6 +166,21 @@ $(document).ready(function () {
             '                </li>')
         $('.ic_s_db').parent().parent().hide();
     }
+
+    $('#button_submit_query').click(function (){
+        var data=$('#sqlquery').val();
+        $.ajax({
+            url:'add_sql',
+            data:{
+                data:data
+            },
+            method:'POST',
+            success: function (res) {
+                alert(res)
+            }
+        })
+
+    })
     if (path == '/db_structure'){
         $('#topmenu').append('<li class="nav-item active">\n' +
             '                    <a class="nav-link text-nowrap" href="db_structure'+paths+'">\n' +
